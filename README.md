@@ -6,14 +6,20 @@ Activamos el entorno virtual
 ```. venv/Scripts/activate```
 
 e instalamos lo que esta en requirements.txt
-pip install -r requirements.txt
+`pip install -r requirements.txt`
+
+Ademas se debe descargar ckeditor
+`pip install django-ckeditor`
+
+O si ya esta instalado quizas se deba actualizar
+`pip install django-ckeditor --upgrade`
 
 Para correr el programa
-py manage.py runserver
+`py manage.py runserver`
 
 # User
 Si se desea crear un usuario desde el codigo:
-py manage.py createsuperuser
+`py manage.py createsuperuser`
 y seguir las indicaciones.
 
 # Sobre el programa
