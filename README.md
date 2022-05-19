@@ -3,7 +3,7 @@ Para empezar creamos un entorno virtual:
 py -m venv venv
 
 Activamos el entorno virtual
-. venv/Scripts/activate
+```. venv/Scripts/activate```
 
 e instalamos lo que esta en requirements.txt
 pip install -r requirements.txt
