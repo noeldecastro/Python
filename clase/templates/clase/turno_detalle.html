@@ -1,0 +1,19 @@
+{% extends 'indice/index.html' %}
+
+
+{% block bloque_body %}
+
+    <p>Fecha del turno: <i> {{ turno.fechaTurno }}</i></p>
+    <p>Estado: <i>
+    {% if turno.atendido is False %}
+        No atendido
+    {% else %}
+        Atendido
+    {% endif %}
+    </i></p>
+
+    <p>
+        <a href="{% url 'List' %}">Regresar</a>
+    </p>
+        
+{% endblock bloque_body %}

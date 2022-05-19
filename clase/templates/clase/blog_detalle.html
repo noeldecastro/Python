@@ -1,0 +1,16 @@
+{% extends 'indice/index.html' %}
+
+
+{% block bloque_body %}
+
+    <h5 class="card-title"><i>{{blog.titulo}}</i></h5>
+    <h6 class="card-subtitle"><i>{{blog.subtitulo}}</i></h6>
+    <p class="card-text"><i>{{blog.contenido}}</i></p>
+    <p class="card-text"><i>{{blog.Autor}}</i></p>
+    <p class="card-text"><i>{{blog.Fecha}}</i></p>
+
+    <p>
+        <a href={% url 'BlogList' %}>Regresar</a>
+    </p>
+        
+{% endblock bloque_body %}

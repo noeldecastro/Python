@@ -1,0 +1,27 @@
+{% extends 'indice/index.html' %}
+
+
+{% block bloque_body %}
+    <div class="row">
+        {% for blog in object_list %}
+            <div class="col-sm-auto">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">{{blog.titulo}}</h5>
+                        <h6 class="card-subtitle">{{blog.subtitulo}}</h6>
+                        <a class="btn btn-primary" href={% url 'BlogDetail' blog.id %} >Ver mas</a>
+                        
+                        {% if user.is_authenticated %}
+                            <a class="btn btn-primary" href ={% url 'EditBlog' blog.id %}>Editar</a>
+                            <a class="btn btn-primary" href ={% url 'BlogDelete' blog.id %}>Eliminar blog</a>                           
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% if user.is_authenticated %}
+    <a class="btn btn-primary" href= {% url 'NewBlog' %}>Agregar blog</a>
+    {% endif %}
+        
+{% endblock bloque_body %}

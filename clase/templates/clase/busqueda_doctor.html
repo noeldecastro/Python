@@ -1,0 +1,29 @@
+{% extends 'indice/index.html' %}
+
+{% block bloque_body %}
+    <form action= {% url 'busqueda_doctor' %} method="get">
+        {% csrf_token %} 
+        <table>
+            {{buscador.as_table}}
+        </table> 
+        <input type="submit" , value = "Buscar">
+    </form>
+
+    {% if dato %}
+        <div class="row">
+            {% for doctor in doctores_buscados %}
+                <div class="col-sm-auto">
+                    <div class="card" style="width: 18rem;">
+                        {% comment %} <img class="card-img-top" src="..." alt="Card image cap"> Posible imagen {% endcomment %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ doctor.nombre }} {{doctor.apellido}}</h5>
+                            <p class="card-text">{{doctor.profesion}}</p>
+                            <a class="btn btn-primary" href = {%url 'nuevo_turno' %} >Pedir turno</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock bloque_body %}
+    

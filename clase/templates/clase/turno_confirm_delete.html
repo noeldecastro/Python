@@ -1,0 +1,12 @@
+{% extends 'indice/index.html' %}
+
+
+{% block bloque_body %}
+
+    <form method="POST">
+        {% csrf_token %}
+        ¿Estas seguro que quieres eliminar este turno?
+        <input type="submit" placeholder="Confirmar">
+    </form>
+        
+{% endblock bloque_body %}

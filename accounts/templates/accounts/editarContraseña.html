@@ -1,0 +1,13 @@
+{% extends 'indice/index.html' %}
+
+
+{% block bloque_body %}
+
+<form action="" method="POST">{% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+
+    <input class = "btn btn-secondary" type="submit", value="Actualizar">
+</form>
+{% endblock bloque_body %}

@@ -1,0 +1,23 @@
+{% extends 'indice/index.html' %}
+
+
+{% block bloque_body %}
+
+    <div class="row">
+        {% for turno in object_list %}
+            <div class="col-sm-auto">
+                <div class="card" style="width: 18rem;">
+                        {% comment %} <img class="card-img-top" src="..." alt="Card image cap"> Posible imagen {% endcomment %}
+                    <div class="card-body">
+                        <h5 class="card-title">Fecha: {{turno.fechaTurno}}</h5>
+                        <a class="btn btn-primary" href = {% url 'Detail' turno.id %} >Ver mas</a>
+                        <a class="btn btn-primary" href = {% url 'EditTurno' turno.id %} >Editar</a>
+                        <a class="btn btn-primary" href = {% url 'Delete' turno.id %} >Cancelar turno</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <a class="btn btn-primary" href={% url 'nuevo_turno' %}>Agregar turno</a>
+        
+{% endblock bloque_body %}

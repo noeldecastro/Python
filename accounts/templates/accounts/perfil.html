@@ -1,0 +1,16 @@
+{% extends 'indice/index.html' %}
+
+
+{% block bloque_body %}
+
+    <img src="{{user_avatar_url}}" alt="Avatar" height='100'>
+    <a class="btn btn-secondary" href= {% url 'agregarAvatar' %}>Modificar mi avatar</a>
+    <p>Nombre: <i> {{ user.first_name }}</i></p>
+    <p>Apellido: <i> {{ user.last_name }}</i></p>
+    <p>Email: <i> {{ user.email }}</i></p>
+
+    <a class="btn btn-secondary" href={% url 'editarContraseña' %}>Modificar mi contraseña</a>
+    <a class="btn btn-secondary" href={% url 'editarDatos' %}>Modificar mis datos</a>
+
+        
+{% endblock bloque_body %}

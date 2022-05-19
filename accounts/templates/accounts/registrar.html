@@ -1,0 +1,17 @@
+{% extends 'indice/index.html' %}
+
+
+{% block bloque_body %}
+
+    
+    {% if msj_registro %}
+        {{msj_registro}}
+    {% endif %}
+        
+    <form action="" method = 'POST'>
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit", value = 'Crear usuario'>
+    </form>
+    
+{% endblock bloque_body %}

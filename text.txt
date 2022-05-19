@@ -1,0 +1,27 @@
+Carpeta venv no se encuentra en github.
+
+Proyecto:
+contamos con tres clases: Paciente, Doctor y turno. Para sus modelos se creo un file models.py
+En clases contamos con el template para buscar doctor y para agregar paciente. Para los forms se creo un
+file forms.py
+En views se encuentran las funciones de buscar_doctor y formulario_paciente para agregar un paciente.
+Optamos por mantener el nav y el footer en todo la pagina web y por esa razon lo dejamos en el archivo index.html
+en la carpeta template/indice dentro de la app indice. El body se fue transformando en cada template con
+{% block bloque_body%}
+
+#para el super usuario se utilizo
+py manage.py createsuperuser
+user: admin
+password: 1234
+
+heroku:
+pip install dj-database-url django-heroku gunicorn psycopg2 python-decouple whitenoise
+
+
+setting: agregar en los import:
+import dj_database_url
+import django_heroku
+
+DEBUG = False /ya no esta en desarrollo, esta en produccion
+
+pip install -r requirements.txt
