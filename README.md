@@ -1,6 +1,12 @@
 # PythonProyectoFinal
 Para empezar creamos un entorno virtual:
-py -m venv venv
+```py -m venv venv```
+
+y creamos una app media:
+```py manage.py startapp media```
+
+Dentro de la app media:es necesario crear una carpeta
+avatares y una carpeta blog
 
 Activamos el entorno virtual
 ```. venv/Scripts/activate```
@@ -16,6 +22,13 @@ O si ya esta instalado quizas se deba actualizar
 
 Para correr el programa
 `py manage.py runserver`
+
+# Base de datos
+Si se realizan grandes cambios en la base de datos
+sera necesario realizar una migration
+```py manage.py makemigrations
+py manage.py migrate´´´
+
 
 # User
 Si se desea crear un usuario desde el codigo:
