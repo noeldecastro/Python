@@ -25,9 +25,10 @@ Para correr el programa
 
 # Base de datos
 Si se realizan grandes cambios en la base de datos
-sera necesario realizar una migration
-```py manage.py makemigrations
-py manage.py migrate´´´
+sera necesario realizar una migration:
+`py manage.py makemigrations`
+`py manage.py migrate`
+
 
 
 # User
