@@ -55,7 +55,6 @@ def editarContraseña(request):
             informacion = form.cleaned_data
             print(f'Informacion: {informacion}')
 
-            user.email = informacion['email']
             password1 = informacion.get('password1')
             password2 = informacion.get('password2')
             if password1 == password2 and len(password1) > 8:
@@ -75,15 +74,14 @@ def editarContraseña(request):
 def agregar_avatar(request):
     form = AvatarForm(request.POST, request.FILES)
     if form.is_valid():
-        user = User.objects.get(username=request.user)
-        avatar = Avatar(user=user, imagen = form.cleaned_data["imagen"])
+        avatar = Avatar(user=request.user, imagen = form.cleaned_data["imagen"])
         avatar.save()
 
-        return render(request, 'indice/index.html',{"user_avatar_url":buscar_url_avatar(user)})
+        return render(request, 'indice/index.html',{"user_avatar_url":buscar_url_avatar(request.user)})
     else:
         form = AvatarForm()
     
-    return render(request, '/agregarAvatar.html',{"form":form,"user_avatar_url":buscar_url_avatar(request.user)})
+    return render(request, 'accounts/agregarAvatar.html',{"form":form,"user_avatar_url":buscar_url_avatar(request.user)})
 
 @login_required
 def editarDatos(request):
