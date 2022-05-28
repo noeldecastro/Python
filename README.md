@@ -50,3 +50,4 @@ En la app accounts tendremos el model Avatar y en views.py las funciones del usu
 
 
 # Demostracion:
+[![Alt text](https://img.youtube.com/vi/9ZvbGqOJ_ng/0.jpg)](https://www.youtube.com/watch?v=9ZvbGqOJ_ng)
